@@ -10,17 +10,47 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
-@import "~@ionic/angular/css/core.css";
+//@import "~@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
-@import "~@ionic/angular/css/normalize.css";
-@import "~@ionic/angular/css/structure.css";
-@import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+//@import "~@ionic/angular/css/normalize.css";
+//@import "~@ionic/angular/css/structure.css";
+//@import "~@ionic/angular/css/typography.css";
+//@import '~@ionic/angular/css/display.css';
 
 /* Optional CSS utils that can be commented out */
-@import "~@ionic/angular/css/padding.css";
-@import "~@ionic/angular/css/float-elements.css";
-@import "~@ionic/angular/css/text-alignment.css";
-@import "~@ionic/angular/css/text-transformation.css";
-@import "~@ionic/angular/css/flex-utils.css";
+//@import "~@ionic/angular/css/padding.css";
+//@import "~@ionic/angular/css/float-elements.css";
+//@import "~@ionic/angular/css/text-alignment.css";
+//@import "~@ionic/angular/css/text-transformation.css";
+//@import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(assets/fonts/Exo2-300.woff2) format('woff2');
+}
+
+html, body {
+  background: black;
+  font-family: 'Exo 2', sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: block !important;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background: rgb(29, 29, 29);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(62, 62, 62)
+}

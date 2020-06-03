@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "calc",
+  "appId": "minimal.calculator.github.io",
+  "appName": "Calculator",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

@@ -1,20 +1,72 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<header>
+    <section class="input-output">
+        <textarea #inputEl
+                  inputmode="none"
+                  (focus)="focusInput()"
+                  [style.font-size]="inputFontSize + 'em'"
+                  [ngModel]="input"
+                  (ngModelChange)="onInput($event)"></textarea>
+        <span #inputStaticFontSizeEl
+              class="input--static-font-size">{{input}}</span>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+        <p #outputEl
+           class="output"
+           [class.hidden]="!output">
+            <span class="output--static-font-size">{{output}}</span>
+            <span class="output--dynamic-font-size"
+                  [style.font-size]="outputFontSize + 'em'">{{output}}</span>
+        </p>
+    </section>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+    <section class="text-controls">
+        <span (click)="editInput('(')">(</span>
+        <span (click)="editInput(')')">)</span>
+
+        <span (click)="clear()">C</span>
+        <span #backspaceEL
+              (click)="backspace()">
+      <svg viewBox="0 0 512 512">
+        <g>
+          <path d="M490.667,64H133.077c-7.196,0-13.906,3.627-17.848,9.647L3.485,244.314c-4.647,7.098-4.647,16.274,0,23.372
+          l111.744,170.667c3.942,6.02,10.652,9.647,17.848,9.647h357.589c11.782,0,21.333-9.551,21.333-21.333V85.333
+          C512,73.551,502.449,64,490.667,64z M469.333,405.333H144.609L46.833,256l97.776-149.333h324.725V405.333z"/>
+          <path d="M198.246,356.418c8.331,8.331,21.839,8.331,30.17,0l70.248-70.248l70.248,70.248c8.331,8.331,21.839,8.331,30.17,0
+          s8.331-21.839,0-30.17L328.834,256l70.248-70.248c8.331-8.331,8.331-21.839,0-30.17s-21.839-8.331-30.17,0l-70.248,70.248
+          l-70.248-70.248c-8.331-8.331-21.839-8.331-30.17,0c-8.331,8.331-8.331,21.839,0,30.17L268.495,256l-70.248,70.248
+          C189.915,334.58,189.915,348.087,198.246,356.418z"/>
+        </g>
+      </svg>
+    </span>
+    </section>
+</header>
+
+<main>
+    <section class="operators">
+        <span (click)="editInput('*')">*</span>
+        <span (click)="editInput('/')">/</span>
+    </section>
+
+    <section class="numbers">
+        <span (click)="editInput('7')">7</span>
+        <span (click)="editInput('8')">8</span>
+        <span (click)="editInput('9')">9</span>
+        <span (click)="editInput('4')">4</span>
+        <span (click)="editInput('5')">5</span>
+        <span (click)="editInput('6')">6</span>
+        <span (click)="editInput('1')">1</span>
+        <span (click)="editInput('2')">2</span>
+        <span (click)="editInput('3')">3</span>
+        <span (click)="editInput('.')">.</span>
+        <span (click)="editInput('0')">0</span>
+        <span (click)="finalize()">=</span>
+    </section>
+
+    <section class="operators">
+        <span (click)="editInput('+')">+</span>
+        <span (click)="editInput('-')">-</span>
+    </section>
+</main>
+
+<!--<footer>
+    <span></span>
+</footer>-->
